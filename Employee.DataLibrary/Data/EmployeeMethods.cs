@@ -28,8 +28,10 @@ namespace Employee.DataLibrary.Data
         {
 
             double tax = employeeData.Rate * 0.12; //(EmployeeData. / 100);
-            double dailyrate = employeeData.Rate / (23 - employeeAttendance.DaysAbsent);
-            double deduction = employeeData.Rate - dailyrate;
+            double dailyrate = employeeData.Rate / 22;
+            double absences = dailyrate * employeeAttendance.DaysAbsent;
+           // double dailyrate = employeeData.Rate / (22 - employeeAttendance.DaysAbsent);
+            double deduction = employeeData.Rate - absences;
             return String.Format("{0:n}", Math.Round(deduction - tax, 2));
 
         }
