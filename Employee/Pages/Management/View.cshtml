@@ -1,0 +1,93 @@
+﻿@page
+@model Employee.Pages.Management.ViewModel
+@{
+}
+
+<h1 class="text-primary"></h1>
+<hr />
+
+<div class="container">
+    <div class="row border p-3">
+
+
+        <div class="col-9">
+            <form method="post">
+                <div class="form-group row">
+                    <div class="col-2">
+                        <label asp-for="EmployeeData.EmployeeType">Employment Type: </label>
+                    </div>
+                    <div class="col-5">
+                        <select id="selCategory" class="categorySelect" asp-for="EmployeeData.EmployeeType" asp-items="Model.EmployeeTypes" disabled>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-2">
+                        <label asp-for="EmployeeData.ID">ID:</label>
+                    </div>
+                    <div class="col-5">
+                        <label class="form-control">@Model.EmployeeData.ID</label>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-2">
+                        <label asp-for="EmployeeData.LastName">Last Name:</label>
+                    </div>
+                    <div class="col-5">
+                        <label class="form-control">@Model.EmployeeData.LastName</label>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-2">
+                        <label asp-for="EmployeeData.FirstName">First Name:</label>
+                    </div>
+                    <div class="col-5">
+                        <label class="form-control">@Model.EmployeeData.FirstName</label>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-2">
+                        <label asp-for="EmployeeData.MiddleName">Middle Name:</label>
+                    </div>
+                    <div class="col-5">
+                        <label class="form-control">@Model.EmployeeData.MiddleName</label>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-2">
+                        <label asp-for="EmployeeData.BirthDate">Birthdate:</label>
+                    </div>
+                    <div class="col-5">
+                        <label class="form-control">@Model.EmployeeData.BirthDate.ToShortDateString()</label>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-2">
+                        <label asp-for="EmployeeData.TIN">TIN:</label>
+                    </div>
+                    <div class="col-5">
+                        <label class="form-control">@Model.EmployeeData.TIN</label>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-2">
+                        <label asp-for="EmployeeData.Rate">Rate:</label>
+                    </div>
+                    <div class="col-5">
+                        <label class="form-control">@Model.EmployeeData.Rate.ToString("N")</label>
+                    </div>
+                </div>
+               
+
+                <div class="form-group row">
+                    @*<div class="col-4">
+                            <input type="submit" value="Update" class="btn btn-primary form-control" />
+                        </div>*@
+                    <div class="col-4">
+                        <a asp-page="Index" class="btn btn-secondary form-control">Back to List</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
