@@ -1,0 +1,488 @@
+﻿body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.Error {
+    font-size: 30px;
+    font-family: 'Century Gothic';
+    font-style: italic;
+}
+
+.Header {
+    background-color: #333;
+    /*height: 35px;*/
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+    .Header h1 {
+        font-family: 'Century Gothic';
+        font-weight: bold;
+        font-size: 30px;
+        color: #0081ba;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+.Menu {
+    margin: 0;
+    padding: 0;
+    border: solid;
+    border-color: white;
+    border-width: 1px;
+}
+
+    .Menu ul {
+        text-align: center;
+        list-style-type: none;
+        margin: 0 auto;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+    }
+
+        .Menu ul li {
+            border-left: 1px solid #d9d9d9;
+            border-right: 1px solid #d9d9d9;
+            display: inline-block;
+            margin: 0 auto;
+        }
+
+            .Menu ul li a {
+                transition: 0.3s ease;
+                font-family: 'Century Gothic';
+                font-size: 15px;
+                display: block;
+                color: white;
+                width: 300px;
+                text-align: center;
+                padding: 20px 16px;
+                text-decoration: none;
+            }
+
+                .Menu ul li a:hover {
+                    /*border-top: 4px solid #ffffff;
+                    border-bottom: 4px solid #ffffff;
+                    padding: 6px 16px;*/
+                    background-color: lightgrey;
+                    color: black;
+                }
+
+.myGrid .Rowstyle {
+    height: 10px;
+}
+
+.myGrid .AlternateRowStyle {
+    height: 10px;
+}
+
+.myGrid {
+    background-color: #ccc;
+    border: 1px solid #e3e6f0;
+    text-align: center;
+}
+
+    .myGrid th {
+        color: #fff;
+        background: #5c5c5c;
+        text-align: center;
+        vertical-align: bottom !important;
+    }
+
+    .myGrid td {
+        /*background: #d9d9d9;*/
+        color: black;
+    }
+
+
+    .myGrid a {
+        /*border-radius: 10%;
+        background-color: #444;*/
+        padding: 3px 10px 6px 10px;
+        color: black;
+        text-decoration: underline;
+        /*text-decoration: none;
+        -o-box-shadow: 1px 1px 1px #111;
+        -moz-box-shadow: 1px 1px 1px #111;
+        -webkit-box-shadow: 1px 1px 1px #111;
+        box-shadow: 1px 1px 1px #111;*/
+        margin: 5px 5px;
+    }
+
+        .myGrid a:hover {
+            background-color: #0081ba;
+            color: black;
+        }
+
+
+    .myGrid span {
+        /*background-color: #9dfb54;*/
+        color: black;
+        /*-o-box-shadow: 1px 1px 1px #111;
+    -moz-box-shadow: 1px 1px 1px #111;
+    -webkit-box-shadow: 1px 1px 1px #111;*/
+        /*box-shadow: 1px 1px 1px #111;*/
+        /*border-radius: 50%;*/
+        /*padding: 5px 10px 5px 10px;*/
+        margin: 3px 3px;
+    }
+
+.commonbutton {
+    background-color: #424242;
+    color: white;
+}
+
+    .commonbutton:hover {
+        background-color: #9dfb54;
+    }
+
+    .commonbutton:active {
+        background-color: #9dfb54;
+    }
+
+.Prompt {
+    background-color: #dedede;
+    filter: alpha(opacity=50);
+    opacity: 0.30;
+}
+
+.Promptmodal {
+    text-align: center;
+    min-width: 250px;
+    min-height: 120px;
+    background-color: white;
+    border-style: solid;
+    border-color: #0081ba;
+    border-width: .5px;
+    box-shadow: 5px 5px 15px #424242;
+}
+
+.promptButton {
+    float: right;
+    width: 75px;
+    height: 25px;
+    margin-top: 15px;
+    margin-right: 15px;
+    background-color: #424242;
+    color: white;
+    border-radius: 5px;
+    border-style: groove;
+}
+
+    .promptButton:hover {
+        background-color: #0e871b;
+        width: 77px;
+        height: 27px;
+        cursor: pointer;
+    }
+
+.Remarks {
+    background-color: #dedede;
+    filter: alpha(opacity=50);
+    opacity: 0.30;
+}
+
+.RemarksLbl {
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.remarkstb {
+    margin-left: 20px;
+    font-size: 15px;
+    resize: none;
+}
+
+.RemarksModal {
+    text-align: left;
+    min-width: 400px;
+    min-height: 200px;
+    background-color: #d9d9d9;
+    border-style: solid;
+    border-color: #0081ba;
+    border-width: .5px;
+    box-shadow: 5px 5px 15px #424242;
+}
+
+.RemarksButton {
+    float: right;
+    width: 75px;
+    height: 30px;
+    margin-top: 15px;
+    margin-right: 20px;
+    margin-bottom: 15px;
+    background-color: #424242;
+    color: white;
+    border-radius: 5px;
+    border-style: groove;
+}
+
+    .RemarksButton:hover {
+        background-color: #0e871b;
+        zoom: 1;
+        cursor: pointer;
+    }
+
+.auto-style1 {
+    width: 833px;
+}
+
+.auto-style2 {
+    width: 74px;
+}
+
+.myModalPopupbackGrnd {
+    background-color: #dedede;
+    filter: alpha(opacity=50);
+    opacity: 0.70;
+}
+
+.myModalPopup {
+    min-width: 700px;
+    min-height: 300px;
+    max-width: 900px;
+    background-color: white;
+    border-style: groove;
+    border-radius: 0px;
+    border-color: #444445;
+    box-shadow: 5px 5px 15px #424242;
+}
+
+.myModalPopup1 {
+    min-width: 500px;
+    min-height: 300px;
+    max-width: 700px;
+    background-color: #d3d3d3;
+    border-style: groove;
+    border-radius: 0px;
+    border-color: #444445;
+    box-shadow: 5px 5px 15px #424242;
+}
+
+.lblTransactID {
+    font-weight: bold;
+    color: red;
+}
+
+.button {
+    font-size: 20px;
+    background-color: #00ce81;
+    color: white;
+    border-radius: 8px;
+    width: 355px;
+    height: 40px
+}
+
+    .button:hover {
+        background-color: #00a064;
+        color: white;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+.auto-style6 {
+    width: 123px;
+}
+
+.auto-style10 {
+    width: 97px;
+}
+
+.auto-style12 {
+    width: 89px;
+}
+
+.auto-style13 {
+    height: 60px;
+}
+
+#noti_Container {
+    position: relative;
+    height: 36px;
+}
+
+#container ul {
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 12px 10px;
+    height: 21px;
+}
+
+    #container ul li {
+        float: left;
+        font: 13px helvetica;
+        font-weight: bold;
+        margin: 3px 0;
+    }
+
+        #container ul li a {
+            color: #FFF;
+            text-decoration: none;
+            padding: 6px 15px;
+            cursor: pointer;
+        }
+
+            #container ul li a:hover {
+                background: #425B90;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+/* A CIRCLE LIKE BUTTON IN THE TOP MENU. */
+#noti_Button {
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    margin: -3px 10px 0 10px;
+    cursor: pointer;
+}
+
+/* THE POPULAR RED NOTIFICATIONS COUNTER. */
+#noti_Counter {
+    display: block;
+    position: absolute;
+    background: #E1141E;
+    color: #FFF;
+    font-size: 12px;
+    font-weight: normal;
+    padding: 1px 3px;
+    margin: -8px 0 0 35px;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    z-index: 1;
+}
+
+#noti_Container1 {
+    position: relative;
+}
+
+/* THE POPULAR RED NOTIFICATIONS COUNTER. */
+#noti_Counter1 {
+    display: block;
+    position: absolute;
+    background: #E1141E;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: normal;
+    padding: 1px 3px;
+    margin: 10px 0 0 190px;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    z-index: 1;
+}
+
+.modalsm {
+    top: 250px !important;
+}
+
+.modallg {
+    top: 0px !important;
+}
+
+.modalxl {
+    top: 0px !important;
+}
+
+.modalcp {
+    top: 150px !important;
+}
+
+.WindowsStyle .ajax__combobox_inputcontainer .ajax__combobox_textboxcontainer input {
+    display: block;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    color: #555;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+    .WindowsStyle .ajax__combobox_inputcontainer .ajax__combobox_textboxcontainer input:focus {
+        border-color: #66afe9;
+        outline: 0;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+    }
+
+.WindowsStyle .ajax__combobox_inputcontainer .ajax__combobox_buttoncontainer button {
+    margin-left: -35px;
+    border-radius: 3px;
+    display: block;
+}
+
+.WindowsStyle .ajax__combobox_itemlist {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+
+.myGridmgt .Rowstyle {
+    height: 10px;
+}
+
+.myGridmgt .AlternateRowStyle {
+    height: 10px;
+}
+
+.myGridmgt {
+    background-color: #e2e2e2;
+    border: 1px solid black;
+    text-align: center;
+}
+
+    .myGridmgt th {
+        color: #fff;
+        background: #424242;
+        text-align: center;
+        vertical-align: bottom !important;
+    }
+
+    .myGridmgt td {
+        color: black;
+    }
+
+    .myGridmgt a {
+        border-radius: 10%;
+        background-color: #444;
+        padding: 3px 10px 6px 10px;
+        color: White;
+        text-decoration: none;
+        -o-box-shadow: 1px 1px 1px #111;
+        -moz-box-shadow: 1px 1px 1px #111;
+        -webkit-box-shadow: 1px 1px 1px #111;
+        box-shadow: 1px 1px 1px #111;
+        margin: 5px;
+    }
+
+        .myGridmgt a:hover {
+            background-color: #9dfb54;
+            color: black;
+        }

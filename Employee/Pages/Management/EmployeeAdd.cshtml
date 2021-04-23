@@ -1,0 +1,110 @@
+﻿@page
+@model Employee.Pages.Management.EmployeeAddModel
+@{
+}
+
+<h1 class="text-primary">Profile</h1>
+<hr />
+
+<div class="container">
+    <div class="row border p-3">
+
+
+        <div class="col-9">
+            <form method="post">
+                <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                <div class="form-group row">
+                    <div class="col-2">
+                        <label asp-for="EmployeeData.EmployeeType">Employment Type: </label>
+                    </div>
+                    <div class="col-5">
+                        <select id="selCategory" class="categorySelect" asp-for="EmployeeData.EmployeeType" asp-items="Model.EmployeeTypes">
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <span asp-validation-for="EmployeeData.EmployeeType" class="text-danger"></span>
+                </div>
+                <div class="form-group row">
+                    <div class="col-2">
+                        <label asp-for="EmployeeData.LastName">Last Name:</label>
+                    </div>
+                    <div class="col-5">
+                        <input asp-for="EmployeeData.LastName" class="form-control" />
+                    </div>
+                    <span asp-validation-for="EmployeeData.LastName" class="text-danger"></span>
+                </div>
+                <div class="form-group row">
+                    <div class="col-2">
+                        <label asp-for="EmployeeData.FirstName">First Name:</label>
+                    </div>
+                    <div class="col-5">
+                        <input asp-for="EmployeeData.FirstName" class="form-control" />
+                    </div>
+                    <span asp-validation-for="EmployeeData.FirstName" class="text-danger"></span>
+                </div>
+                <div class="form-group row">
+                    <div class="col-2">
+                        <label asp-for="EmployeeData.MiddleName">Middle Name:</label>
+                    </div>
+                    <div class="col-5">
+                        <input asp-for="EmployeeData.MiddleName" class="form-control" />
+                    </div>
+                    <span asp-validation-for="EmployeeData.MiddleName" class="text-danger"></span>
+                </div>
+                <div class="form-group row">
+                    <div class="col-2">
+                        <label asp-for="EmployeeData.BirthDate">Birthdate:</label>
+                    </div>
+                    <div class="col-5">
+                        <input type="date" asp-for="EmployeeData.BirthDate" class="form-control" />
+                    </div>
+                    <span asp-validation-for="EmployeeData.BirthDate" class="text-danger"></span>
+                </div>
+                <div class="form-group row">
+                    <div class="col-2">
+                        <label asp-for="EmployeeData.TIN">TIN:</label>
+                    </div>
+                    <div class="col-5">
+                        <input asp-for="EmployeeData.TIN" class="form-control" />
+                    </div>
+                    <span asp-validation-for="EmployeeData.TIN" class="text-danger"></span>
+                </div>
+                <div class="form-group row">
+                    <div class="col-2">
+                        <label asp-for="EmployeeData.Rate">Rate:</label>
+                    </div>
+                    <div class="col-5">
+                        <input asp-for="EmployeeData.Rate" class="form-control" />
+                    </div>
+                    <span asp-validation-for="EmployeeData.Rate" class="text-danger"></span>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <input type="submit" value="Update" class="btn btn-primary form-control" />
+                    </div>
+                    <div class="col-4">
+                        <a asp-page="Index" class="btn btn-secondary form-control">Back to List</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section scripts{ 
+<script>
+
+    $(document).ready(function () {
+
+        $('.categorySelect').select2({
+            placeholder: {
+                id: '', // the value of the option
+                text: 'None Selected'
+            },
+            dropdownAutoWidth: true,
+            width: 'auto'
+        });
+    });
+</script>
+
+}

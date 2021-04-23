@@ -1,0 +1,68 @@
+﻿@page
+@model Employee.Pages.Payroll.IndexModel
+@{
+}
+
+<div class="row p-0 m-0">
+    <div class="col-12 border p-3 mt-3">
+
+
+        <br />
+        @if (Model.EmployeeDatas.Count() > 0)
+        {
+            <table class="table myGrid">
+                <thead>
+                    <tr>
+                        <th>
+                            <label asp-for="EmployeeDatas.FirstOrDefault().ID"></label>
+                        </th>
+                        <th>
+                            <label asp-for="EmployeeDatas.FirstOrDefault().LastName"></label>
+                        </th>
+                        <th>
+                            <label asp-for="EmployeeDatas.FirstOrDefault().FirstName"></label>
+                        </th>
+                        <th>
+                            <label asp-for="EmployeeDatas.FirstOrDefault().MiddleName"></label>
+                        </th>
+                        <th></th>
+                        <th>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.EmployeeDatas)
+                    {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(m => item.ID)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => item.LastName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => item.FirstName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => item.MiddleName)
+                        </td>
+                        <td>
+                            <a asp-page="Encode" asp-route-id="@item.ID" class="btn btn-success btn-sm text-white">Attendance</a>
+                        </td>
+                        <td>
+                            <a asp-page="Compute" asp-route-id="@item.ID" class="btn btn-success btn-sm text-white">Calculate</a>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p>
+                No data to display..
+            </p>
+        }
+
+    </div>
+</div>
