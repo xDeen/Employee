@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Employee.DataLibrary.Data;
 using Employee.DataLibrary.Models;
 using Employee.Extension;
 using Employee.Instantiate;
@@ -13,21 +14,20 @@ namespace Employee.Pages.Management
 {
     public class EmployeeAddModel : PageModel
     {
+        private readonly IEmployeeMethods _employeeMethods;
+
+        public EmployeeAddModel(IEmployeeMethods employeeMethods)
+        {
+            _employeeMethods = employeeMethods;
+        }
         [BindProperty]
         public EmployeeData EmployeeData { get; set; }
         public List<SelectListItem> EmployeeTypes { get; set; }
-        public void OnGet()
+        public async Task<IActionResult> OnGetAsync()
         {
-
-            InstantiateValues _employeeType = new InstantiateValues();
-            //EmployeeTypes = (List<SelectListItem>)_employeeType.GetEmployeeTypes().Select(x=> new SelectListItem() { Text = x.Type, Value = x.TypeID.ToString()});
-            EmployeeTypes = new List<SelectListItem>
-            {
-                new SelectListItem{Text = "Regular", Value = "1"},
-                new SelectListItem{Text = "Contract", Value = "2"}
-            };
-
-
+            
+            EmployeeTypes = _employeeMethods.GetEmployeeTypes().ConvertAll(x => { return new SelectListItem() { Text = x.Type, Value = x.TypeID.ToString() }; });
+            return Page();
 
         }
 

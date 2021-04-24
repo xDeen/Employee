@@ -10,6 +10,7 @@ namespace Employee.Instantiate
 {
     public class InstantiateValues
     {
+
         public List<EmployeeType> GetEmployeeTypes()
         {
 

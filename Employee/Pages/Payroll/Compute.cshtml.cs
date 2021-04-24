@@ -25,11 +25,8 @@ namespace Employee.Pages.Payroll
         public List<SelectListItem> EmployeeTypes { get; set; }
         public async Task<IActionResult> OnGetAsync(int id)
         {
-            EmployeeTypes = new List<SelectListItem>
-            {
-                new SelectListItem{Text = "Regular", Value = "1"},
-                new SelectListItem{Text = "Contract", Value = "2"}
-            };
+            EmployeeTypes = _employeeMethods.GetEmployeeTypes().ConvertAll(x => { return new SelectListItem() { Text = x.Type, Value = x.TypeID.ToString() }; });
+
             EmployeeData =  HttpContext.Session.GetEmployees().Where(r => r.ID == id).FirstOrDefault();
             EmployeeAttendance = HttpContext.Session.GetEmployeeAttendance().Where(r => r.EmployeeID == id).FirstOrDefault();
             if (EmployeeAttendance == null)

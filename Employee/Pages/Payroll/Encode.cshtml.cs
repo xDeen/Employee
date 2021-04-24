@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Employee.DataLibrary.Data;
 using Employee.DataLibrary.Models;
 using Employee.Extension;
 using Microsoft.AspNetCore.Mvc;
@@ -12,17 +13,20 @@ namespace Employee.Pages.Payroll
 {
     public class EncodeModel : PageModel
     {
+        private readonly IEmployeeMethods _employeeMethods;
+
+        public EncodeModel(IEmployeeMethods employeeMethods)
+        {
+            _employeeMethods = employeeMethods;
+        }
         public EmployeeData EmployeeData { get; set; }
         [BindProperty]
         public EmployeeAttendance EmployeeAttendance { get; set; }
         public List<SelectListItem> EmployeeTypes { get; set; }
         public async Task<IActionResult> OnGetAsync(int id)
         {
-            EmployeeTypes = new List<SelectListItem>
-            {
-                new SelectListItem{Text = "Regular", Value = "1"},
-                new SelectListItem{Text = "Contract", Value = "2"}
-            };
+            EmployeeTypes = _employeeMethods.GetEmployeeTypes().ConvertAll(x => { return new SelectListItem() { Text = x.Type, Value = x.TypeID.ToString() }; });
+
             EmployeeData = HttpContext.Session.GetEmployees().Where(r => r.ID == id).FirstOrDefault();
             EmployeeAttendance = HttpContext.Session.GetEmployeeAttendance().Where(r => r.EmployeeID == id).FirstOrDefault();
             if (EmployeeAttendance == null)
